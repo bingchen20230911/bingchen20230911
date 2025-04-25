@@ -1,0 +1,210 @@
+/* 🌍 General Page Styles */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  /* text-align: center; */
+  padding: 10px;
+}
+
+/* 🔍 Google Search Box */
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a.gs-title {
+  font-size: 20px !important;
+}
+.gs-title b {
+  font-size: 20px !important;
+}
+.gs-bidi-start-align.gs-snippet {
+  font-size: 14px !important;
+}
+
+
+/* Search Box Container */
+.search-box {
+  width: 90%;
+  /* max-width: 700px; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  /* background: ; */
+  position: relative;
+}
+
+/* Hide Google CSE's X button */
+.gsc-clear-button {
+  display: none !important;
+}
+
+/* Adjust padding to prevent overlap */
+.gsc-input {
+  padding-right: 30px !important;
+}
+
+/* 📰 News Container */
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* 📌 News Card */
+.news-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: calc(33% - 20px); /* Default for desktop */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 📸 News Cover Image */
+.news-item img.cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📃 News Content */
+.news-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🏷️ News Title */
+.news-title {
+  font-size: 1em;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: black;
+}
+
+.news-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-title a:hover {
+  color: black;
+}
+
+/* 📌 Source and Published Time */
+.news-meta {
+  font-size: 0.85em;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Source Logo as Small Icon */
+.news-meta img.source-logo {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Source Name */
+.news-meta .source-name {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+/* 📆 Published Time (Grey & Small Font) */
+.news-meta .time {
+  font-size: 0.8em;
+  color: #999;
+}
+
+/* 🔄 Loading Indicator */
+.loading {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin: 20px 0;
+  display: none;
+}
+
+/* 🎭 Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.news-item.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* 📱 Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+  .news-item {
+    width: calc(50% - 20px); /* Switch to two-column layout */
+  }
+
+  .news-title {
+    font-size: 0.9em; /* Reduce font size for smaller screens */
+  }
+
+  .news-meta {
+    font-size: 0.75em; /* Adjust text size for readability */
+  }
+
+  .search-wrapper {
+    padding: 10px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .news-item img.cover {
+    height: 150px;
+  }
+}
+
+/* 📱 Smaller Screens (Phones) */
+@media screen and (max-width: 480px) {
+  .news-item {
+    width: 100%; /* Single column for very small screens */
+  }
+
+  .news-title {
+    font-size: 0.85em;
+  }
+
+  .news-meta {
+    font-size: 0.7em;
+  }
+
+  .news-item img.cover {
+    height: 130px;
+  }
+}
